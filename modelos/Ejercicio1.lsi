@@ -1,0 +1,30 @@
+head section
+//Definir  metedos
+Integer getNumCandidatos()
+Integer getPresupuestoMax()
+Integer getNumCualidades()
+Double getSueldoMin(Integer i)
+Boolean getSonIncompatibles(Integer i, Integer j)
+Boolean getTieneCualidad(Integer i, Integer j)
+Integer getValoracion(Integer i)
+
+//Definir  variables
+Integer n = getNumCandidatos()
+Integer m = getPresupuestoMax()
+Integer h = getNumCualidades()
+
+goal section
+max sum(getValoracion(i) x[i], i in 0 .. n )
+
+constraints section
+//1º Restriccion: respetar el  sueldo maximo
+sum(getSueldoMin(i) x[i], i in 0 .. n) <= m
+
+//2º Restriccion: respetar las compatibilidades 
+x[i] + x[j] <= 1, i in 0 .. n,  j in 0 .. n | getSonIncompatibles(i,j) 
+
+//3º Restriccion: cubrir cualidades
+sum(x[i], i in 0 .. n | getTieneCualidad(i,j)) >= 1, j in 0 .. h+1
+
+bin
+x[i], i in 0 .. n
