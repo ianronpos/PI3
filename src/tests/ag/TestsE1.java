@@ -3,7 +3,7 @@ package tests.ag;
 import java.util.List;
 
 import ejercicio1.Cromosoma1;
-
+import ejercicio1.Datos1;
 import us.lsi.ag.agchromosomes.AlgoritmoAG;
 import us.lsi.ag.agstopping.StoppingConditionFactory;
 
@@ -18,7 +18,9 @@ public class TestsE1 {
 			var ag = AlgoritmoAG.of(cr);
 			ag.ejecuta();
 			
+			
 			System.out.println("================================");
+			System.out.println(Datos1.getPresupuestoMax());
 			System.out.println(ag.bestSolution());
 			System.out.println("================================");
 		});

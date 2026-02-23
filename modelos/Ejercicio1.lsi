@@ -24,7 +24,8 @@ sum(getSueldoMin(i) x[i], i in 0 .. n) <= m
 x[i] + x[j] <= 1, i in 0 .. n,  j in 0 .. n | getSonIncompatibles(i,j) 
 
 //3º Restriccion: cubrir cualidades
-sum(x[i], i in 0 .. n | getTieneCualidad(i,j)) >= 1, j in 0 .. h+1
+//TODO: Comprobar si quitando el h+1 se generan todas las restricciones de cualidades en los casos 1 y 2 
+sum(x[i], i in 0 .. n | getTieneCualidad(i,j)) >= 1, j in 0 .. h
 
 bin
 x[i], i in 0 .. n
