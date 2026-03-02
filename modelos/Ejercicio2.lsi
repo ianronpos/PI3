@@ -23,17 +23,17 @@ max sum(getPrecioProd(i) x[i], i in 0 .. n)
 
 constraints section
 //No se puede superar el T_prod 
-sum(getTiempoProdProd(i) x[i]) <= a
+sum(getTiempoProdProd(i) x[i], i in 0 .. n) <= a
 
 //No se puede superar el T_elab 
-sum(getTiempoElabProd(i) x[i]) <= b
+sum(getTiempoElabProd(i) x[i], i in 0 .. n) <= b
 
 
 //No se puede vender mas unidades del maximo establecido
 x[i] <= getUnidsSemanaProd(i), i in 0 .. n
 
 bounds section
-x[i] < n, i in 0 .. n
+x[i] < getUnidsSemanaProd(i), i in 0 .. n
 
 int
 x[i], i in 0 .. n 

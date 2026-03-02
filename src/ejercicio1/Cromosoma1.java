@@ -34,7 +34,7 @@ public class Cromosoma1 implements BinaryData<Solucion1> {
 			if(value.get(i) == 1){ //Comprueba que se ha seleccionado en el cromosoma y que no se haya violado las restricciones 
 				//Funcion objetivo
 				goal += Datos1.getValoracion(i); //Funcion objetivo: Maximizar la valoracion
-
+				
 				//Restricciones 
 				presupuesto -= Datos1.getSueldoMin(i); //Descuento el presupuesto maximo 
 				if(presupuesto < 0) flag_presupuesto = true; //Violacion de restriccion de presupuesto 
