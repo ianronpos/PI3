@@ -50,9 +50,9 @@ public class Cromosoma1 implements BinaryData<Solucion1> {
 		
 		if(!cualidades.isEmpty()) flag_cualidades = true; 
 		
-		return goal - (flag_presupuesto ? 200 : 0)
-					- (flag_incompatible ? 10000: 0)
-					- (flag_cualidades ? 200 : 0); 
+		return goal - (flag_presupuesto ? 20000 : 0)
+					- (flag_incompatible ? 20000: 0)
+					- (flag_cualidades ? 20000 : 0); 
 	}
 
 	@Override

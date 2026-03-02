@@ -70,7 +70,7 @@ public class Datos2 {
 		
 		@Override
 		public String toString() {		
-			return String.format("%s: TP=; TE=", nombre, tp, te);
+			return String.format("%s: TP=%d; TE=%d", nombre, tp, te);
 		}
 	}
 	

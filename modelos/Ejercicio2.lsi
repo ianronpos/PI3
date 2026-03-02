@@ -1,0 +1,39 @@
+head section
+//Definir  metedos
+Integer getNumProductos()
+Integer getTiempoProdTotal()
+Integer getTiempoElabTotal()
+Integer getUnidsSemanaProd(Integer i) 
+Double getPrecioProd(Integer i)
+Integer getNumComponentes()
+Integer getTiempoProdProd(Integer i)
+Integer getTiempoElabProd(Integer i)
+
+
+//Definir  variables
+Integer a = getTiempoProdTotal() 
+Integer b = getTiempoElabTotal()
+Integer n = getNumProductos() 
+Integer m = getNumComponentes()
+
+goal section
+//Maximizar beneficio
+max sum(getPrecioProd(i) x[i], i in 0 .. n) 
+
+
+constraints section
+//No se puede superar el T_prod 
+sum(getTiempoProdProd(i) x[i]) <= a
+
+//No se puede superar el T_elab 
+sum(getTiempoElabProd(i) x[i]) <= b
+
+
+//No se puede vender mas unidades del maximo establecido
+x[i] <= getUnidsSemanaProd(i), i in 0 .. n
+
+bounds section
+x[i] < n, i in 0 .. n
+
+int
+x[i], i in 0 .. n 
